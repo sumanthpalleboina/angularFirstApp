@@ -1,0 +1,17 @@
+<div class="app-container">
+  <h1 class="heading">Post Form</h1>
+  <input type="text" class="input-title" placeholder="post title" [(ngModel)]="postTitle" />
+  <textarea row="100" cols="50" placeholder="Post Details" class="text-area" [(ngModel)]="postDetails"></textarea>
+  <input type="text" class="input-title" placeholder="post image" [(ngModel)]="postImageUlr" />
+  <input type="text" class="input-title" placeholder="post source" [(ngModel)]="postUrl" />
+  <div class="checkbox-container">
+    <input type="checkbox" id="addBackground" class="checkbox" [(ngModel)]="addBackground"/>
+    <label for="addBackground" class="label">Add Background</label>
+  </div>
+  <div class="app-container">
+    <h1><span [class.add-bg]="addBackground">{{postTitle}}</span></h1>
+    <h3>{{postDetails}}</h3>
+    <img [src]="postImageUlr" [style.width]="200" [style.display]="postImageUlr?'block':'none'" />
+    <a [href]="postUrl" target="_blank" [style.display]="postUrl?'block':'none'">More details</a>
+  </div>
+</div>
